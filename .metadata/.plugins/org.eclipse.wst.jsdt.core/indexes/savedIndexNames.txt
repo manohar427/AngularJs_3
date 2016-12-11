@@ -1,0 +1,7 @@
+INDEX VERSION 1.122+D:\Training\AngularJs_3\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1593889810.index
+2226206375.index
+3973406575.index
+393769225.index
+243582828.index
+3326109802.index
