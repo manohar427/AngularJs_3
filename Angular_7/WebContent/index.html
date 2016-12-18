@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript" src="angular.min.js"></script>
+<script type="text/javascript" src="myController.js"></script>
+<body ng-app="myApp">
+      
+      <div ng-controller="xxxx">
+             
+             <table border="1">
+               <tr>
+                 <td>Name</td>
+                 <td>Age</td>
+                 <td>Email</td>
+                 <td>Salary</td>
+                 <td>Salary1</td>
+                 <td>DOB</td>
+               </tr>
+               
+               <tr ng-repeat="person in persons">
+                 <td>{{person.name|lowercase}}</td>
+                 <td>{{person.age}}</td>
+                 <td>{{person.email|uppercase}}</td>
+                 <td>{{person.salary|currency}}</td>
+                 <td>{{person.salary|number:2}}</td>
+                 <td>{{person.dob|date:"yyyy"}}</td>
+               </tr>
+             </table>
+            
+      </div>
+</body>
+</html>
