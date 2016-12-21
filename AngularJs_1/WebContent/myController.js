@@ -1,5 +1,5 @@
 var myModule = angular.module("myApp",[]);
-var myController = function($scope){
+/*var myController = function($scope){
 	
-};
-myModule.controller("myCOntroller",myController);
+};*/
+//myModule.controller("xxxx",myController);
