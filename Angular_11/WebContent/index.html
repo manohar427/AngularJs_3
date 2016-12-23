@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript" src="angular.min.js"></script>
+<script type="text/javascript" src="myController.js"></script>
+<body ng-app="myApp">
+      
+      <div ng-controller="xxxx">
+             
+             DESC :<input type="checkbox" ng-model='orderType' />
+                <table border="1">
+                    <tr>
+                      <td>Name</td>
+                      <td>Alpha2_code</td>
+                      <td>alpha3_code</td>
+                    </tr>
+                    
+                    <tr  ng-repeat="country in countries|orderBy:'name':orderType">
+                      <td>{{country.name}}</td>
+                      <td>{{country.alpha2_code}}</td>
+                      <td>{{country.alpha3_code}}</td>
+                    </tr>
+                </table>
+      </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript" src="angular.min.js"></script>
+<script type="text/javascript" src="myController.js"></script>
+<body ng-app="myApp">
+      
+      <div ng-controller="xxxx">
+             
+             Search NAME Text :<input type="text" ng-model='searchText.name'/><br/>
+             Search CAGAR 2 Text :<input type="text" ng-model='searchText.alpha2_code'/><br/>
+             Search CAGAR 3 Text :<input type="text" ng-model='searchText.alpha3_code'/><br/>
+                          Case Sence :<input type="checkbox" ng-model='caseSence'/>
+                <table border="1">
+                    <tr>
+                      <td>Name</td>
+                      <td>Alpha2_code</td>
+                      <td>alpha3_code</td>
+                    </tr>
+                    
+                    <tr  ng-repeat="country in countries|filter:searchText:caseSence">
+                      <td>{{country.name}}</td>
+                      <td>{{country.alpha2_code}}</td>
+                      <td>{{country.alpha3_code}}</td>
+                    </tr>
+                </table>
+      </div>
+</body>
+</html>
