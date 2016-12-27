@@ -1,4 +1,0 @@
-var myModule = angular.module("myApp",[]);
-var myController = function($scope){
-	
-};
