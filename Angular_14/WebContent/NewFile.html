@@ -1,0 +1,67 @@
+<html lang="en" >
+   <head>
+      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+	  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <script language="javascript">
+          angular
+            .module('firstApplication', ['ngMaterial'])
+            .controller('radioButtonsController', radioButtonsController);
+
+          function radioButtonsController ($scope) {
+            $scope.radioData = [
+               { label: 'Apple', value: 'Apple1' },
+               { label: 'Banana', value: 'Apple2' },
+               { label: 'Mango', value: 'Apple3', },
+               { label: 'Orange', value: 'Appl4e' }
+            ];
+            $scope.group='Banana';
+         }	  
+      </script>      
+   </head>
+   <body ng-app="firstApplication"> 
+      <div id="radioButtonsContainer" ng-controller="radioButtonsController as ctrl" layout="column" ng-cloak>
+         <p>Selected Value: <span>{{ group }}</span> </p>
+         <md-radio-group ng-model="group" class="md-primary">
+            <md-radio-button ng-repeat="d in radioData"
+               ng-value="d.value"
+               ng-disabled=" d.isDisabled "
+               ng-class="{'md-align-top-left': $index==1}" >
+               {{ d.label }}<br/>
+            </md-radio-button>
+         </md-radio-group>
+         
+         
+        <md-radio-group layout="column">
+	              <md-card class="qd-patient-card qd-patient-card--full qd-patient-card--full-ordering" ng-repeat="d in radioData" ng-value="d.InsuranceName" aria-label="{{ d.InsuranceName }}">
+	                <md-radio-button  class="qd-radio-button qd-patient-card__radio-button" layout="row" layout-align="center start" ng-click="vm.selectedInsurence(d)">
+	                  <div class="qd-patient-card__container" layout="column" layout-align="center start" layout-gt-xs="row" layout-align-gt-xs="start center">
+	                    <div flex-gt-xs="50" layout="row" layout-align="start center">
+	                      <span>{{d.insCoName}}</span>
+	                    </div>
+	
+	                    <div class="qd-patient-card__right" flex-gt-xs="50" layout="row" layout-align-gt-xs="end center">
+	                      <span>{{d.addrLine1}},{{d.city}},{{d.state}} {{d.zipCode}}</span>
+	                      
+	                    </div>
+	                  </div>
+	                </md-radio-button>
+	               </md-card>
+	            </md-radio-group>
+	            
+	            
+	            
+         
+         
+         
+         
+         
+         
+         
+      </div>
+   </body>
+</html>
